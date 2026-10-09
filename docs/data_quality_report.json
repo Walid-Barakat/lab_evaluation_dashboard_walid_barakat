@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "synthetic": true,
+  "evaluation_rows": 9000,
+  "judge_rows": 9000,
+  "unique_examples": 2250,
+  "categories": 5,
+  "models": 4,
+  "days": 90,
+  "date_min": "2026-07-10",
+  "date_max": "2026-10-07",
+  "missing_critical_cells": 0,
+  "duplicate_evaluation_ids": 0,
+  "balanced_category_model_counts": true,
+  "out_of_range_scores": 0,
+  "rows_removed": 0,
+  "agreement_rule": "rounded score difference <= 10 points"
+}

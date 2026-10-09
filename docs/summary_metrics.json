@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "evaluations": 9000,
+  "average_score": 55.2604,
+  "median_score": 56.41,
+  "target_rate": 0.155,
+  "target_score": 80,
+  "strongest_category": "instruction_following",
+  "weakest_category": "reasoning",
+  "agreement_rate": 0.619556,
+  "average_judge_difference": 9.0315,
+  "best_simulated_candidate": "Candidate B",
+  "dates": [
+    "2026-07-10",
+    "2026-10-07"
+  ]
+}

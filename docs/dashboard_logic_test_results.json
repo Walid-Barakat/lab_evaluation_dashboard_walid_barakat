@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "environment": "Node VM with canvas and DOM test doubles; not a browser",
+  "checks": [
+    {
+      "name": "Unfiltered count and row-weighted average",
+      "status": "passed"
+    },
+    {
+      "name": "Model selection applies to every selected row",
+      "status": "passed"
+    },
+    {
+      "name": "Category selection combines with model filter",
+      "status": "passed"
+    },
+    {
+      "name": "Date range combines with model and category",
+      "status": "passed"
+    },
+    {
+      "name": "Reset restores all 9000 records",
+      "status": "passed"
+    },
+    {
+      "name": "Histogram bins include score 100 in last bin",
+      "status": "passed"
+    },
+    {
+      "name": "Clicking a category chart updates the filter",
+      "status": "passed"
+    },
+    {
+      "name": "Candidate heatmap selection combines two filters",
+      "status": "passed"
+    },
+    {
+      "name": "Empty range is safe and shows no-data state",
+      "status": "passed"
+    },
+    {
+      "name": "Judge page uses inclusive 10-point tolerance",
+      "status": "passed"
+    },
+    {
+      "name": "CSV export invokes a download handler on both pages",
+      "status": "passed"
+    },
+    {
+      "name": "No p-values, confidence intervals or statistical tests in dashboard",
+      "status": "passed"
+    }
+  ]
+}

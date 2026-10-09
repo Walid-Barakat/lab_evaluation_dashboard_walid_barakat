@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "schema_source": "https://raw.githubusercontent.com/tableau/tableau-document-schemas/main/schemas/2026_2/twb_2026.2.0.xsd",
+  "schema_sha256": "ff330e7df790e1479c75fe364a610202aafa2d691872f77bc7c991aed0b3a733",
+  "import_handling": "Namespace declaration shims for unresolved user:UserAttributes-AG and xml:base imports; main Tableau structure unchanged",
+  "tableau_application_validation": "not performed",
+  "results": [
+    {
+      "file": "evaluation_score_dashboard.twb",
+      "xml_schema": "passed",
+      "field_and_zone_refs": "passed"
+    },
+    {
+      "file": "judge_agreement_dashboard.twb",
+      "xml_schema": "passed",
+      "field_and_zone_refs": "passed"
+    },
+    {
+      "file": "evaluation_score_dashboard.twbx",
+      "xml_schema": "passed",
+      "zip_integrity": "passed",
+      "embedded_csv": "passed"
+    },
+    {
+      "file": "judge_agreement_dashboard.twbx",
+      "xml_schema": "passed",
+      "zip_integrity": "passed",
+      "embedded_csv": "passed"
+    }
+  ]
+}

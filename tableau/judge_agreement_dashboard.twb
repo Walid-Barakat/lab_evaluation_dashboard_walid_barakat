@@ -1,0 +1,729 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workbook xmlns:user="http://www.tableausoftware.com/xml/user" version="26.2" original-version="26.2" source-build="0.0.0 (0000.0.0.0)" source-platform="mac">
+  <document-format-change-manifest>
+    <ManifestByVersion/>
+  </document-format-change-manifest>
+  <datasources>
+    <datasource caption="Synthetic judge comparisons" name="lab.judges" version="26.2" inline="true">
+      <connection class="textscan" directory="../data" filename="judge_agreement_data.csv" separator="," header="yes" charset="UTF-8" locale="en_US">
+        <relation name="judge_agreement_data.csv" table="[judge_agreement_data.csv]" type="table">
+          <columns header="yes" separator="," locale="en_US">
+            <column name="evaluation_id" datatype="integer" ordinal="0"/>
+            <column name="example_id" datatype="integer" ordinal="1"/>
+            <column name="category" datatype="string" ordinal="2"/>
+            <column name="model_version" datatype="string" ordinal="3"/>
+            <column name="date" datatype="date" ordinal="4"/>
+            <column name="judge_1_score" datatype="real" ordinal="5"/>
+            <column name="judge_2_score" datatype="real" ordinal="6"/>
+            <column name="score_difference" datatype="real" ordinal="7"/>
+            <column name="agreement" datatype="real" ordinal="8"/>
+            <column name="difference_bin" datatype="integer" ordinal="9"/>
+            <column name="difference_range" datatype="string" ordinal="10"/>
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class="column">
+            <remote-name>evaluation_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[evaluation_id]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>evaluation_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>example_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[example_id]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>example_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>model_version</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[model_version]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>model_version</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>judge_1_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[judge_1_score]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>judge_1_score</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>judge_2_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[judge_2_score]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>judge_2_score</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>score_difference</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[score_difference]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>score_difference</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>agreement</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[agreement]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>agreement</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>difference_bin</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[difference_bin]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>difference_bin</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>difference_range</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[difference_range]</local-name>
+            <parent-name>[judge_agreement_data.csv]</parent-name>
+            <remote-alias>difference_range</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled="yes"/>
+      <column name="[evaluation_id]" datatype="integer" role="dimension" type="nominal" caption="Evaluation Id"/>
+      <column name="[example_id]" datatype="integer" role="dimension" type="nominal" caption="Example Id"/>
+      <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+      <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+      <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+      <column name="[judge_1_score]" datatype="real" role="measure" type="quantitative" caption="Judge 1 Score" default-format="n1"/>
+      <column name="[judge_2_score]" datatype="real" role="measure" type="quantitative" caption="Judge 2 Score" default-format="n1"/>
+      <column name="[score_difference]" datatype="real" role="measure" type="quantitative" caption="Score Difference" default-format="n1"/>
+      <column name="[agreement]" datatype="real" role="measure" type="quantitative" caption="Agreement" default-format="p1"/>
+      <column name="[difference_bin]" datatype="integer" role="dimension" type="ordinal" caption="Difference Bin"/>
+      <column name="[difference_range]" datatype="string" role="dimension" type="nominal" caption="Difference Range"/>
+      <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+        <calculation class="tableau" formula="1"/>
+      </column>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name="Global Lab Filters">
+      <datasources>
+        <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+      </datasources>
+      <datasource-dependencies datasource="lab.judges">
+        <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+        <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+        <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+        <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+        <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+        <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+      </datasource-dependencies>
+      <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+        <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+      </filter>
+      <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+        <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+      </filter>
+      <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+        <min>#2026-07-10#</min>
+        <max>#2026-10-07#</max>
+      </filter>
+    </shared-view>
+  </shared-views>
+  <worksheets>
+    <worksheet name="Agreement Rate">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Agreement Rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.judges">
+            <column name="[agreement]" datatype="real" role="measure" type="quantitative" caption="Agreement" default-format="p1"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[agreement]" name="[avg:agreement:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[lab.judges].[avg:agreement:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="28"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+      <simple-id uuid="{C8AC9CB8-C29F-5E6F-9DB8-81B341DBA97A}"/>
+    </worksheet>
+    <worksheet name="Average Score Gap">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Average Score Gap</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.judges">
+            <column name="[score_difference]" datatype="real" role="measure" type="quantitative" caption="Score Difference" default-format="n1"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[score_difference]" name="[avg:score_difference:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[lab.judges].[avg:score_difference:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="28"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+      <simple-id uuid="{65B919EB-C764-58BA-AAAC-E98A7B80A74C}"/>
+    </worksheet>
+    <worksheet name="Compared Evaluations">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Compared Evaluations</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.judges">
+            <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+              <calculation class="tableau" formula="1"/>
+            </column>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[row_count]" name="[sum:row_count:qk]" derivation="Sum" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[lab.judges].[sum:row_count:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="28"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+      <simple-id uuid="{FE39AE69-7B8E-514E-B0BA-AD30D35DEEA5}"/>
+    </worksheet>
+    <worksheet name="Agreement by Category">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Agreement by Category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.judges">
+            <column name="[agreement]" datatype="real" role="measure" type="quantitative" caption="Agreement" default-format="p1"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[agreement]" name="[avg:agreement:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort="[lab.judges].[none:category:nk]" direction="DESC" measure-to-sort-by="[lab.judges].[avg:agreement:qk]" shelf="rows"/>
+          </shelf-sorts>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Bar"/>
+            <encodings>
+              <color column="[lab.judges].[avg:agreement:qk]"/>
+              <text column="[lab.judges].[avg:agreement:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.judges].[none:category:nk]</rows>
+        <cols>[lab.judges].[avg:agreement:qk]</cols>
+      </table>
+      <simple-id uuid="{2F6061A5-6009-5CEC-B452-C8608CED286F}"/>
+    </worksheet>
+    <worksheet name="Judge Score Differences">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Judge Score Differences</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.judges">
+            <column name="[difference_range]" datatype="string" role="dimension" type="nominal" caption="Difference Range"/>
+            <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+              <calculation class="tableau" formula="1"/>
+            </column>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[difference_range]" name="[none:difference_range:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[row_count]" name="[sum:row_count:qk]" derivation="Sum" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Bar"/>
+            <encodings/>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="false"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.judges].[sum:row_count:qk]</rows>
+        <cols>[lab.judges].[none:difference_range:nk]</cols>
+      </table>
+      <simple-id uuid="{B139CB80-9247-5B71-BEA7-63B46DA44A4A}"/>
+    </worksheet>
+    <worksheet name="Judge Comparison">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Judge Comparison</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic judge comparisons" name="lab.judges"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.judges">
+            <column name="[judge_1_score]" datatype="real" role="measure" type="quantitative" caption="Judge 1 Score" default-format="n1"/>
+            <column name="[judge_2_score]" datatype="real" role="measure" type="quantitative" caption="Judge 2 Score" default-format="n1"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[evaluation_id]" datatype="integer" role="dimension" type="nominal" caption="Evaluation Id"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[judge_1_score]" name="[avg:judge_1_score:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[judge_2_score]" name="[avg:judge_2_score:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[evaluation_id]" name="[none:evaluation_id:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.judges].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.judges].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.judges].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Circle"/>
+            <encodings>
+              <color column="[lab.judges].[none:category:nk]"/>
+              <lod column="[lab.judges].[none:evaluation_id:nk]"/>
+            </encodings>
+            <trendline enabled="true" fit="linear" exclude-intercept="false" enable-confidence-bands="false" exclude-color="true" enable-instant-analytics="false" enable-tooltips="false"/>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="false"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.judges].[avg:judge_2_score:qk]</rows>
+        <cols>[lab.judges].[avg:judge_1_score:qk]</cols>
+      </table>
+      <simple-id uuid="{C219AC0B-C263-50B3-8B39-308BF2020792}"/>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="Judge Agreement Analysis Dashboard">
+      <style>
+        <style-rule element="dashboard">
+          <format attr="background-color" value="#071527"/>
+        </style-rule>
+      </style>
+      <size maxheight="950" maxwidth="1400" minheight="950" minwidth="1400"/>
+      <zones>
+        <zone x="1500" y="1000" w="97000" h="6500" id="1" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="24" fontcolor="#edf5ff">Judge Agreement Analysis Dashboard | Walid Barakat</run>
+          </formatted-text>
+        </zone>
+        <zone x="1500" y="7500" w="97000" h="4500" id="2" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="12" fontcolor="#ffcc80">SYNTHETIC LAB DATA | Agreement = absolute score difference &lt;= 10 points. Similar ratings do not prove correctness.</run>
+          </formatted-text>
+        </zone>
+        <zone x="1500" y="12500" w="30000" h="7000" id="3" type-v2="filter" name="Agreement by Category" param="[lab.judges].[none:model_version:nk]" mode="dropdown"/>
+        <zone x="33500" y="12500" w="30000" h="7000" id="4" type-v2="filter" name="Agreement by Category" param="[lab.judges].[none:category:nk]" mode="dropdown"/>
+        <zone x="65500" y="12500" w="30000" h="7000" id="5" type-v2="filter" name="Agreement by Category" param="[lab.judges].[none:date:qk]" mode="dropdown"/>
+        <zone x="1500" y="20500" w="30000" h="12500" id="6" name="Agreement Rate" show-title="true"/>
+        <zone x="33500" y="20500" w="30000" h="12500" id="7" name="Average Score Gap" show-title="true"/>
+        <zone x="65500" y="20500" w="30000" h="12500" id="8" name="Compared Evaluations" show-title="true"/>
+        <zone x="1500" y="35000" w="47000" h="27500" id="9" name="Agreement by Category" show-title="true"/>
+        <zone x="50500" y="35000" w="48000" h="27500" id="10" name="Judge Score Differences" show-title="true"/>
+        <zone x="1500" y="63500" w="97000" h="30000" id="11" name="Judge Comparison" show-title="true"/>
+        <zone x="1500" y="95000" w="97000" h="4500" id="12" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="11" fontcolor="#adc3dc">Use model, category and date filters to explore quality. All records are simulated for this lab; no real model claims.</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid="{23A8CE02-389B-5BB2-81B9-CF6DF819933B}"/>
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor="1.0">
+    <window name="Agreement Rate" class="worksheet">
+      <cards/>
+      <viewpoint name="Agreement Rate">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{B84A2EEE-3079-5810-9E7C-166CF6E47F64}"/>
+    </window>
+    <window name="Average Score Gap" class="worksheet">
+      <cards/>
+      <viewpoint name="Average Score Gap">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{975547F7-F860-5BB8-92E2-D6A127827219}"/>
+    </window>
+    <window name="Compared Evaluations" class="worksheet">
+      <cards/>
+      <viewpoint name="Compared Evaluations">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{987DA990-EB92-5956-A32B-15483A10F9DE}"/>
+    </window>
+    <window name="Agreement by Category" class="worksheet">
+      <cards/>
+      <viewpoint name="Agreement by Category">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{43A9B832-8995-5307-92FD-C62EE3E306C5}"/>
+    </window>
+    <window name="Judge Score Differences" class="worksheet">
+      <cards/>
+      <viewpoint name="Judge Score Differences">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{34355157-BB24-54EF-8B46-93A86D6F9E0E}"/>
+    </window>
+    <window name="Judge Comparison" class="worksheet">
+      <cards/>
+      <viewpoint name="Judge Comparison">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{2C6BB312-F182-5CFB-B251-9353A43E9B9B}"/>
+    </window>
+    <window name="Judge Agreement Analysis Dashboard" maximized="true" class="dashboard">
+      <viewpoints>
+        <viewpoint name="Agreement Rate"/>
+        <viewpoint name="Average Score Gap"/>
+        <viewpoint name="Compared Evaluations"/>
+        <viewpoint name="Agreement by Category"/>
+        <viewpoint name="Judge Score Differences"/>
+        <viewpoint name="Judge Comparison"/>
+      </viewpoints>
+      <active id="7"/>
+      <simple-id uuid="{E0CF9158-EF56-521D-BC72-D748CB3C8442}"/>
+    </window>
+  </windows>
+  <explain-data enabled-for-viewer="false" extreme-values-enabled-for-all="false">
+    <explanation-types/>
+  </explain-data>
+  <workbook-optimizer/>
+</workbook>

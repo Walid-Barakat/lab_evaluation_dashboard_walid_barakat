@@ -1,0 +1,21 @@
+category,model_version,count,mean,median
+code,Candidate A,450,48.453599999999994,48.91
+code,Candidate B,450,51.787311111111116,52.025
+code,Candidate C,450,44.92388888888889,44.4
+code,Candidate D,450,50.282466666666664,50.095
+instruction_following,Candidate A,450,71.50542222222222,73.25
+instruction_following,Candidate B,450,74.42866666666667,76.63499999999999
+instruction_following,Candidate C,450,67.5942,69.32499999999999
+instruction_following,Candidate D,450,72.48273333333333,74.85499999999999
+knowledge,Candidate A,450,66.75828888888888,69.06
+knowledge,Candidate B,450,69.82413333333334,73.27
+knowledge,Candidate C,450,62.15453333333333,64.24
+knowledge,Candidate D,450,67.71106666666667,70.425
+reasoning,Candidate A,450,39.56097777777777,38.275
+reasoning,Candidate B,450,42.81417777777778,41.455
+reasoning,Candidate C,450,35.79051111111111,34.004999999999995
+reasoning,Candidate D,450,40.532155555555555,39.045
+tool_calling,Candidate A,450,49.86044444444445,49.89
+tool_calling,Candidate B,450,52.9362,53.21
+tool_calling,Candidate C,450,45.26144444444445,45.61
+tool_calling,Candidate D,450,50.5448,50.894999999999996

@@ -1,0 +1,784 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workbook xmlns:user="http://www.tableausoftware.com/xml/user" version="26.2" original-version="26.2" source-build="0.0.0 (0000.0.0.0)" source-platform="mac">
+  <document-format-change-manifest>
+    <ManifestByVersion/>
+  </document-format-change-manifest>
+  <datasources>
+    <datasource caption="Synthetic model evaluations" name="lab.evaluations" version="26.2" inline="true">
+      <connection class="textscan" directory="../data" filename="evaluation_data_clean.csv" separator="," header="yes" charset="UTF-8" locale="en_US">
+        <relation name="evaluation_data_clean.csv" table="[evaluation_data_clean.csv]" type="table">
+          <columns header="yes" separator="," locale="en_US">
+            <column name="evaluation_id" datatype="integer" ordinal="0"/>
+            <column name="example_id" datatype="integer" ordinal="1"/>
+            <column name="category" datatype="string" ordinal="2"/>
+            <column name="score" datatype="real" ordinal="3"/>
+            <column name="model_version" datatype="string" ordinal="4"/>
+            <column name="date" datatype="date" ordinal="5"/>
+            <column name="score_bin" datatype="integer" ordinal="6"/>
+            <column name="score_range" datatype="string" ordinal="7"/>
+            <column name="meets_target" datatype="real" ordinal="8"/>
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class="column">
+            <remote-name>evaluation_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[evaluation_id]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>evaluation_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>example_id</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[example_id]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>example_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[score]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>score</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>model_version</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[model_version]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>model_version</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>score_bin</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[score_bin]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>score_bin</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>score_range</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[score_range]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>score_range</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>meets_target</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[meets_target]</local-name>
+            <parent-name>[evaluation_data_clean.csv]</parent-name>
+            <remote-alias>meets_target</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled="yes"/>
+      <column name="[evaluation_id]" datatype="integer" role="dimension" type="nominal" caption="Evaluation Id"/>
+      <column name="[example_id]" datatype="integer" role="dimension" type="nominal" caption="Example Id"/>
+      <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+      <column name="[score]" datatype="real" role="measure" type="quantitative" caption="Score" default-format="n1"/>
+      <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+      <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+      <column name="[score_bin]" datatype="integer" role="dimension" type="ordinal" caption="Score Bin"/>
+      <column name="[score_range]" datatype="string" role="dimension" type="nominal" caption="Score Range"/>
+      <column name="[meets_target]" datatype="real" role="measure" type="quantitative" caption="Meets Target" default-format="p1"/>
+      <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+        <calculation class="tableau" formula="1"/>
+      </column>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name="Global Lab Filters">
+      <datasources>
+        <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+      </datasources>
+      <datasource-dependencies datasource="lab.evaluations">
+        <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+        <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+        <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+        <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+        <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+        <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+      </datasource-dependencies>
+      <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+        <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+      </filter>
+      <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+        <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+      </filter>
+      <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+        <min>#2026-07-10#</min>
+        <max>#2026-10-07#</max>
+      </filter>
+    </shared-view>
+  </shared-views>
+  <worksheets>
+    <worksheet name="Average Quality Score">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Average Quality Score</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[score]" datatype="real" role="measure" type="quantitative" caption="Score" default-format="n1"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[score]" name="[avg:score:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[lab.evaluations].[avg:score:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="28"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+      <simple-id uuid="{28928D05-E3CA-5ADC-B05B-3A8F156D86C0}"/>
+    </worksheet>
+    <worksheet name="Total Evaluations">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Total Evaluations</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+              <calculation class="tableau" formula="1"/>
+            </column>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[row_count]" name="[sum:row_count:qk]" derivation="Sum" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[lab.evaluations].[sum:row_count:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="28"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+      <simple-id uuid="{B02BEAD9-D4D4-5A32-AF6B-7949F36C355A}"/>
+    </worksheet>
+    <worksheet name="Scores At Or Above 80">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Scores At Or Above 80</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[meets_target]" datatype="real" role="measure" type="quantitative" caption="Meets Target" default-format="p1"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[meets_target]" name="[avg:meets_target:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[lab.evaluations].[avg:meets_target:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="28"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+      <simple-id uuid="{91815CE2-5F0C-5910-9AA8-DE782DD0CFAD}"/>
+    </worksheet>
+    <worksheet name="Score Distribution">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Score Distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[score_range]" datatype="string" role="dimension" type="nominal" caption="Score Range"/>
+            <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+              <calculation class="tableau" formula="1"/>
+            </column>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[score_range]" name="[none:score_range:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[row_count]" name="[sum:row_count:qk]" derivation="Sum" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Bar"/>
+            <encodings/>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="false"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.evaluations].[sum:row_count:qk]</rows>
+        <cols>[lab.evaluations].[none:score_range:nk]</cols>
+      </table>
+      <simple-id uuid="{A35B1D2C-2EDB-5F4C-B1A6-9DDAC1250987}"/>
+    </worksheet>
+    <worksheet name="Scores by Category">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Scores by Category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[score_range]" datatype="string" role="dimension" type="nominal" caption="Score Range"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[row_count]" datatype="integer" role="measure" type="quantitative" caption="Evaluations">
+              <calculation class="tableau" formula="1"/>
+            </column>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[score_range]" name="[none:score_range:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[row_count]" name="[sum:row_count:qk]" derivation="Sum" pivot="key" type="quantitative"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Square"/>
+            <encodings>
+              <color column="[lab.evaluations].[sum:row_count:qk]"/>
+              <text column="[lab.evaluations].[sum:row_count:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.evaluations].[none:category:nk]</rows>
+        <cols>[lab.evaluations].[none:score_range:nk]</cols>
+      </table>
+      <simple-id uuid="{EFEE049B-FFE6-5A8B-80B4-9B04670070A1}"/>
+    </worksheet>
+    <worksheet name="Category Comparison">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Category Comparison</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[score]" datatype="real" role="measure" type="quantitative" caption="Score" default-format="n1"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[score]" name="[avg:score:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort="[lab.evaluations].[none:category:nk]" direction="DESC" measure-to-sort-by="[lab.evaluations].[avg:score:qk]" shelf="rows"/>
+          </shelf-sorts>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Bar"/>
+            <encodings>
+              <color column="[lab.evaluations].[avg:score:qk]"/>
+              <text column="[lab.evaluations].[avg:score:qk]"/>
+            </encodings>
+            <reference-line id="ref1" axis-column="[lab.evaluations].[avg:score:qk]" value-column="[lab.evaluations].[avg:score:qk]" scope="per-table" label-type="custom" label="Average of displayed category means" z-order="1" formula="average" tooltip-type="none" enable-instant-analytics="false"/>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.evaluations].[none:category:nk]</rows>
+        <cols>[lab.evaluations].[avg:score:qk]</cols>
+      </table>
+      <simple-id uuid="{B3D0D4B8-5AFD-5A8B-A7C3-B384A5D72881}"/>
+    </worksheet>
+    <worksheet name="Candidate Comparison">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="16" fontcolor="#edf5ff">Candidate Comparison</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Synthetic model evaluations" name="lab.evaluations"/>
+          </datasources>
+          <datasource-dependencies datasource="lab.evaluations">
+            <column name="[model_version]" datatype="string" role="dimension" type="nominal" caption="Model Version"/>
+            <column name="[category]" datatype="string" role="dimension" type="nominal" caption="Category"/>
+            <column name="[score]" datatype="real" role="measure" type="quantitative" caption="Score" default-format="n1"/>
+            <column name="[date]" datatype="date" role="dimension" type="quantitative" caption="Date"/>
+            <column-instance column="[model_version]" name="[none:model_version:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[category]" name="[none:category:nk]" derivation="None" pivot="key" type="nominal"/>
+            <column-instance column="[score]" name="[avg:score:qk]" derivation="Avg" pivot="key" type="quantitative"/>
+            <column-instance column="[date]" name="[none:date:qk]" derivation="None" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <filter column="[lab.evaluations].[none:model_version:nk]" filter-group="1" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:model_version:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:category:nk]" filter-group="2" class="categorical">
+            <groupfilter function="level-members" level="[lab.evaluations].[none:category:nk]"/>
+          </filter>
+          <filter column="[lab.evaluations].[none:date:qk]" filter-group="3" class="quantitative">
+            <min>#2026-07-10#</min>
+            <max>#2026-10-07#</max>
+          </filter>
+          <aggregation value="true"/>
+        </view>
+        <style>
+          <style-rule element="table">
+            <format attr="font-family" value="Arial"/>
+            <format attr="font-size" value="11"/>
+            <format attr="color" value="#edf5ff"/>
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+          <style-rule element="pane">
+            <format attr="background-color" value="#10243d"/>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Square"/>
+            <encodings>
+              <color column="[lab.evaluations].[avg:score:qk]"/>
+              <text column="[lab.evaluations].[avg:score:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="color" value="#70c1ff"/>
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="font-size" value="11"/>
+                <format attr="size" value="0.7"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[lab.evaluations].[none:category:nk]</rows>
+        <cols>[lab.evaluations].[none:model_version:nk]</cols>
+      </table>
+      <simple-id uuid="{5516F6D6-95BE-534D-8306-B033D8FD3F1E}"/>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="Model Evaluation Score Dashboard">
+      <style>
+        <style-rule element="dashboard">
+          <format attr="background-color" value="#071527"/>
+        </style-rule>
+      </style>
+      <size maxheight="950" maxwidth="1400" minheight="950" minwidth="1400"/>
+      <zones>
+        <zone x="1500" y="1000" w="97000" h="6500" id="1" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="24" fontcolor="#edf5ff">Model Evaluation Score Dashboard | Walid Barakat</run>
+          </formatted-text>
+        </zone>
+        <zone x="1500" y="7500" w="97000" h="4500" id="2" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="12" fontcolor="#ffcc80">SYNTHETIC LAB DATA | Quality scores: 0-100, higher is better. Target 80 is illustrative. No commercial model claims.</run>
+          </formatted-text>
+        </zone>
+        <zone x="1500" y="12500" w="30000" h="7000" id="3" type-v2="filter" name="Score Distribution" param="[lab.evaluations].[none:model_version:nk]" mode="dropdown"/>
+        <zone x="33500" y="12500" w="30000" h="7000" id="4" type-v2="filter" name="Score Distribution" param="[lab.evaluations].[none:category:nk]" mode="dropdown"/>
+        <zone x="65500" y="12500" w="30000" h="7000" id="5" type-v2="filter" name="Score Distribution" param="[lab.evaluations].[none:date:qk]" mode="dropdown"/>
+        <zone x="1500" y="20500" w="30000" h="12500" id="6" name="Average Quality Score" show-title="true"/>
+        <zone x="33500" y="20500" w="30000" h="12500" id="7" name="Total Evaluations" show-title="true"/>
+        <zone x="65500" y="20500" w="30000" h="12500" id="8" name="Scores At Or Above 80" show-title="true"/>
+        <zone x="1500" y="35000" w="47000" h="28500" id="9" name="Score Distribution" show-title="true"/>
+        <zone x="50500" y="35000" w="48000" h="28500" id="10" name="Scores by Category" show-title="true"/>
+        <zone x="1500" y="65000" w="47000" h="28500" id="11" name="Category Comparison" show-title="true"/>
+        <zone x="50500" y="65000" w="48000" h="28500" id="12" name="Candidate Comparison" show-title="true"/>
+        <zone x="1500" y="95000" w="97000" h="4500" id="13" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="11" fontcolor="#adc3dc">Use model, category and date filters to explore quality. All records are simulated for this lab; no real model claims.</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid="{CC56B8A7-D1AA-50CC-AB98-D58E5C522535}"/>
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor="1.0">
+    <window name="Average Quality Score" class="worksheet">
+      <cards/>
+      <viewpoint name="Average Quality Score">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{D2C587F9-5BBE-5FE1-9EB4-FDF8363C5349}"/>
+    </window>
+    <window name="Total Evaluations" class="worksheet">
+      <cards/>
+      <viewpoint name="Total Evaluations">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{2AEFFC79-4C3C-5E89-A393-546D9B3DC00F}"/>
+    </window>
+    <window name="Scores At Or Above 80" class="worksheet">
+      <cards/>
+      <viewpoint name="Scores At Or Above 80">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{8657DC57-FC5B-5CA5-92B3-315583FCFF38}"/>
+    </window>
+    <window name="Score Distribution" class="worksheet">
+      <cards/>
+      <viewpoint name="Score Distribution">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{9689A491-99A2-5957-A8CC-7505B2C8D718}"/>
+    </window>
+    <window name="Scores by Category" class="worksheet">
+      <cards/>
+      <viewpoint name="Scores by Category">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{A626BEAA-F888-537F-80A8-52353CE61501}"/>
+    </window>
+    <window name="Category Comparison" class="worksheet">
+      <cards/>
+      <viewpoint name="Category Comparison">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{9B042689-B83D-52CC-B89F-3F3B9B7406EF}"/>
+    </window>
+    <window name="Candidate Comparison" class="worksheet">
+      <cards/>
+      <viewpoint name="Candidate Comparison">
+        <zoom type="entire-view"/>
+      </viewpoint>
+      <simple-id uuid="{194A594E-FEF8-5BC5-8393-419F6304F939}"/>
+    </window>
+    <window name="Model Evaluation Score Dashboard" maximized="true" class="dashboard">
+      <viewpoints>
+        <viewpoint name="Average Quality Score"/>
+        <viewpoint name="Total Evaluations"/>
+        <viewpoint name="Scores At Or Above 80"/>
+        <viewpoint name="Score Distribution"/>
+        <viewpoint name="Scores by Category"/>
+        <viewpoint name="Category Comparison"/>
+        <viewpoint name="Candidate Comparison"/>
+      </viewpoints>
+      <active id="7"/>
+      <simple-id uuid="{6FA71F42-54BD-575E-9DBD-1E562988BCC2}"/>
+    </window>
+  </windows>
+  <explain-data enabled-for-viewer="false" extreme-values-enabled-for-all="false">
+    <explanation-types/>
+  </explain-data>
+  <workbook-optimizer/>
+</workbook>
